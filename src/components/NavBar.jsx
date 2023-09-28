@@ -1,21 +1,20 @@
 import React, { useState } from "react";
 
-export const NavBar = () => {
+export const NavBar = ({ modal }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const TradeTheme = () => {
-    const root = document.documentElement;
-    root.style.setProperty("--bg-color", "#281c54");
-    root.style.setProperty("--second-bg-color", "#422d85");
-    root.style.setProperty("--text-color", "#ededed");
-    root.style.setProperty("--main-color", "#8a2be2");
+  const funcModalState = () => {
+    console.log("modalOpen", modalOpen);
+    setModalOpen(!modalOpen);
   };
 
   return (
+    <>
     <header className="header">
       <a href="/" className="logo" style={{ textDecoration: "none" }}>
         Wendel Dev.<span className="animate" style={{ "--i": 1 }}></span>
@@ -33,11 +32,11 @@ export const NavBar = () => {
         <a href="#home" className="active">
           Home
         </a>
-        <a href="#about">Sobre</a>
         <a href="#education">Formação</a>
+        <a href="#projects">Projetos</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contato</a>
-        <a className="theme" onClick={() => TradeTheme()}>
+        <a className="theme" onClick={() => { modal(!modalOpen); funcModalState()}}>
           ⠀⠀⠀
         </a>
 
@@ -45,5 +44,6 @@ export const NavBar = () => {
         <span className="animate" style={{ "--i": 2 }}></span>
       </nav>
     </header>
+    </>
   );
 };

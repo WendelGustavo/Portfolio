@@ -55,13 +55,11 @@ export const Education = () => {
                         <div className="education-content">
                             <div className="content">
                                 <div className="year">
-                                    <i className="bx bxs-calendar"></i> 2017 - 2018
+                                    <i className="bx bxs-calendar"></i> Ago de 2023 - ATUALMENTE
                                 </div>
-                                <h3>Web Developer - Company</h3>
+                                <h3>Desenvolvedor Full Stack - Kabupi</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Expedita corrupti ex eos commodi quibusdam quos quas optio
-                                    explicabo dolor repellendus.
+                                Desenvolvimento de um sistema de Voucher, descontos e cashbacks, direcionado ao turismo da serra gaúcha.
                                 </p>
                             </div>
                         </div>
@@ -69,31 +67,14 @@ export const Education = () => {
                         <div className="education-content">
                             <div className="content">
                                 <div className="year">
-                                    <i className="bx bxs-calendar"></i> 2018 - 2019
+                                    <i className="bx bxs-calendar"></i> Jan de 2023 - ATUALMENTE
                                 </div>
-                                <h3>Web Developer - Company</h3>
+                                <h3>Desenvolvedor Full Stack - CONSEPRO</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Expedita corrupti ex eos commodi quibusdam quos quas optio
-                                    explicabo dolor repellendus.
+                                    Desenvolvimento de um sistema de gestão de estacionamento rotativo da cidade de Taquara.
                                 </p>
                             </div>
                         </div>
-
-                        <div className="education-content">
-                            <div className="content">
-                                <div className="year">
-                                    <i className="bx bxs-calendar"></i> 2019 - 2020
-                                </div>
-                                <h3>Web Developer - Company</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Expedita corrupti ex eos commodi quibusdam quos quas optio
-                                    explicabo dolor repellendus.
-                                </p>
-                            </div>
-                        </div>
-
                         <span className="animate scroll" style={{ "--i": 6 }}></span>
                     </div>
                 </div>

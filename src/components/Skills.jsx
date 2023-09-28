@@ -4,14 +4,14 @@ export const Skills = () => {
     return (
         <section className="skills" id="skills">
             <h2 className="heading">
-                My <span>Skills</span>
+                Minhas <span>Habilidades</span>
                 <span className="animate scroll" style={{ "--i": 1 }}></span>
             </h2>
 
             <div className="skills-row">
                 <div className="skills-column">
                     <h3 className="title">
-                        Coding Skills
+                    Habilidades de programação
                         <span className="animate scroll" style={{ "--i": 2 }}></span>
                     </h3>
 
@@ -60,7 +60,7 @@ export const Skills = () => {
 
                 <div className="skills-column">
                     <h3 className="title">
-                        Professional Skills
+                        Habilidades profissionais
                         <span className="animate scroll" style={{ "--i": 5 }}></span>
                     </h3>
 
