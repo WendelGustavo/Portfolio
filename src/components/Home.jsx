@@ -14,8 +14,8 @@ export const Home = () => {
         </div>
         <p>
           Sou um Desenvolvedor Full Stack com 1 ano de experiência.
-          Estou cursando Ciência da Computação na Faculdade Feevale ( 2º Semestre ).
-          Atualmente trabalhando como desenvolvedor Full Stack em um projeto associado a Faculdade Faccat.
+          Estou cursando Ciência da Computação na Faculdade Feevale 2º Semestre.
+          Focado em evoluir meus conhecimentos sempre visando o meu crescimento profissional.
           <span className="animate" style={{ "--i": 4 }}></span>
         </p>
 

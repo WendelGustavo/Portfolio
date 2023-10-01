@@ -25,11 +25,10 @@ export const HomePage = () => {
       const top = window.scrollY;
 
       sections.forEach((sec) => {
-        const offset = sec.offsetTop - 350;
+        const offset = sec.offsetTop - 450;
         const id = sec.getAttribute("id");
 
         if (top >= offset) {
-            console.log('id');
           navLinks.forEach((link) => {
             link.classList.remove("active");
             document
@@ -38,7 +37,6 @@ export const HomePage = () => {
           });
           sec.classList.add("show-animate");
         } else {
-            console.log('id2'); 
           sec.classList.remove("show-animate");
         }
       });
@@ -71,7 +69,7 @@ export const HomePage = () => {
     
     <>
     <div className='background'>
-        <NavBar modal={setStateModal} />
+        <NavBar modal={setStateModal}  />
         <Home />
         <Education />
         <Projects />
@@ -81,7 +79,7 @@ export const HomePage = () => {
         <Footer />
     </div>
 
-    <ThemeModal onOpen={stateModal} />
+    <ThemeModal onOpen={stateModal} setOpen={setStateModal} />
     </>
   )
 }
