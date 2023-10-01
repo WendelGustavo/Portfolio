@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import themes from '../util/DataThemes';
 
-export const ThemeModal = ({ onOpen, onClose }) => {
+export const ThemeModal = ({ onOpen, setOpen }) => {
   const [opened, setOpened] = useState(false);
 
   useEffect(() => {
@@ -12,9 +12,7 @@ export const ThemeModal = ({ onOpen, onClose }) => {
 
   const closeModal = () => {
     setOpened(false);
-    if (onClose) {
-      onClose();
-    }
+    setOpen(false);
   };
 
   const TradeColorFunc = (theme) => {

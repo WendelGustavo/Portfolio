@@ -1,112 +1,76 @@
 import React from "react";
 
 export const Skills = () => {
-    return (
-        <section className="skills" id="skills">
-            <h2 className="heading">
-                Minhas <span>Habilidades</span>
-                <span className="animate scroll" style={{ "--i": 1 }}></span>
-            </h2>
+  const skills = [
+    {
+      name: "JavaScript",
+      icon: "bx bxl-javascript",
+      URL: "https://www.javascript.com/",
+    },
+    {
+      name: "React JS",
+      icon: "bx bxl-react",
+      URL: "https://pt-br.reactjs.org/",
+    },
+    {
+      name: "Node JS",
+      icon: "bx bxl-nodejs",
+        URL: "https://nodejs.org/en/",
+    },
+    {
+      name: "TypeScript",
+      icon: "bx bxl-typescript",
+        URL: "https://www.typescriptlang.org/",
+    },
+    {
+      name: "Git",
+      icon: "bx bxl-git",
+        URL: "https://git-scm.com/",
+    },
+    {
+      name: "MySql",
+      icon: "bx bxl-mysql",
+        URL: "https://www.mysql.com/",
+    },
+    {
+        name: "PostgreSQL",
+        icon: "bx bxl-postgresql",
+        URL: "https://www.postgresql.org/",
+    },
+    {
+        name: "Python",
+        icon: "bx bxl-python",
+        URL: "https://www.python.org/",
+    },
+    {
+        name: "Java",
+        icon: "bx bxl-java",
+        URL: "https://www.java.com/pt-BR/",
+    }
+  ];
 
-            <div className="skills-row">
-                <div className="skills-column">
-                    <h3 className="title">
-                    Habilidades de programação
-                        <span className="animate scroll" style={{ "--i": 2 }}></span>
-                    </h3>
+  return (
+    <section className="skills" id="skills">
+      <h2 className="heading">
+        Minhas <span>Habilidades</span>
+        <span className="animate scroll" style={{ "--i": 1 }}></span>
+      </h2>
 
-                    <div className="skills-box">
-                        <div className="skills-content">
-                            <div className="progress">
-                                <h3>
-                                    HTML <span>90%</span>
-                                </h3>
-                                <div className="bar">
-                                    <span></span>
-                                </div>
-                            </div>
-
-                            <div className="progress">
-                                <h3>
-                                    CSS <span>80%</span>
-                                </h3>
-                                <div className="bar">
-                                    <span></span>
-                                </div>
-                            </div>
-
-                            <div className="progress">
-                                <h3>
-                                    JavaScript <span>65%</span>
-                                </h3>
-                                <div className="bar">
-                                    <span></span>
-                                </div>
-                            </div>
-
-                            <div className="progress">
-                                <h3>
-                                    Python <span>75%</span>
-                                </h3>
-                                <div className="bar">
-                                    <span></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <span className="animate scroll" style={{ "--i": 3 }}></span>
-                    </div>
-                </div>
-
-                <div className="skills-column">
-                    <h3 className="title">
-                        Habilidades profissionais
-                        <span className="animate scroll" style={{ "--i": 5 }}></span>
-                    </h3>
-
-                    <div className="skills-box">
-                        <div className="skills-content">
-                            <div className="progress">
-                                <h3>
-                                    Web Design <span>95%</span>
-                                </h3>
-                                <div className="bar">
-                                    <span></span>
-                                </div>
-                            </div>
-
-                            <div className="progress">
-                                <h3>
-                                    Web Development <span>67%</span>
-                                </h3>
-                                <div className="bar">
-                                    <span></span>
-                                </div>
-                            </div>
-
-                            <div className="progress">
-                                <h3>
-                                    Graphic Design <span>85%</span>
-                                </h3>
-                                <div className="bar">
-                                    <span></span>
-                                </div>
-                            </div>
-
-                            <div className="progress">
-                                <h3>
-                                    SEO Marketing <span>60%</span>
-                                </h3>
-                                <div className="bar">
-                                    <span></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <span className="animate scroll" style={{ "--i": 6 }}></span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+      <div className="skills-row">
+        <div className="skills-column">
+          <div className="skills-box">
+            {skills.map((skill, index) => (
+              <div className="skills-content" key={index}>
+                <div className="cursor-pointer" onClick={()=> window.open(skill.URL, '_blank')}>
+                <i className={skill.icon}></i>
+                <h1>{skill.name}</h1>
+                </div>      
+              </div>
+            ))}
+            <span className="animate scroll" style={{ "--i": 2 }}></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };

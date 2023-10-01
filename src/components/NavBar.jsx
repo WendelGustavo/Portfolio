@@ -9,7 +9,6 @@ export const NavBar = ({ modal }) => {
   };
 
   const funcModalState = () => {
-    console.log("modalOpen", modalOpen);
     setModalOpen(!modalOpen);
   };
 

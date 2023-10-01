@@ -35,9 +35,8 @@ export const Education = () => {
                                 </div>
                                 <h3>Ensino Médio Técnico - Informática (CIMOL)</h3>
                                 <p>
-                                    Concluiu-se a formação após 3 anos de estudos de programação
-                                    integrados ao ensino médio. Além disso, foram realizadas 400
-                                    horas de estágio.
+                                Ensino Médio Técnico no curso de Informática, em conjunto com estágio de 400 horas, 
+                                uma experiência que agregou um valor significativo à minha formação acadêmica e profissional.
                                 </p>
                             </div>
                         </div>
