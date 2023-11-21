@@ -18,6 +18,34 @@
     --main-color: #00abf0;
 }
 
+
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--bg-color);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    border-radius: 6px;
+  }
+  
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--bg-color) #f1f1f1;
+  }
+  
+  *::-moz-scrollbar-thumb {
+    background-color: var(--bg-color);
+    border-radius: 6px;
+  }
+  
+  *::-moz-scrollbar-track {
+    background: #f1f1f1;
+  }
+
 html {
     font-size: 62.5%;
     overflow-x: hidden;
@@ -201,11 +229,12 @@ section {
 }
 
 .btn-box .btn:nth-child(2):hover {
-    color: var(--bg-color);
+    color: var(--bg-color) !important;
 }
 
 .btn-box .btn:nth-child(2)::before {
     background: var(--main-color);
+    color: var(--bg-color) !important;
 }
 
 .btn-box .btn::before {

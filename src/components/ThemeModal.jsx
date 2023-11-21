@@ -21,6 +21,8 @@ export const ThemeModal = ({ onOpen, setOpen }) => {
 
     const root = document.documentElement;
 
+    localStorage.setItem('theme', JSON.stringify(theme));
+
     root.style.setProperty('--bg-color', theme['--bg-color']);
     root.style.setProperty('--second-bg-color', theme['--second-bg-color']);
     root.style.setProperty('--text-color', theme['--text-color']);
