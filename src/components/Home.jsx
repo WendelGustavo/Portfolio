@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 
 export const Home = () => {
@@ -20,7 +21,12 @@ export const Home = () => {
         </p>
 
         <div className="btn-box">
-          <a href="#" className="btn">
+          <a
+          className="btn"
+          href="https://drive.google.com/file/d/1gjM6Iw2WcCeazEjwUGENrasBjd9aZlho/view?usp=sharing"
+          download="Wendel Gustavo - Curriculo.pdf"
+          target="_blank" rel="noreferrer"
+          >
             Currículo⠀<i className="bx bx-download"></i>
           </a>
           <a href="#" className="btn">

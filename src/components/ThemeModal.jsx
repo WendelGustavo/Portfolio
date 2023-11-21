@@ -5,9 +5,11 @@ export const ThemeModal = ({ onOpen, setOpen }) => {
   const [opened, setOpened] = useState(false);
 
   useEffect(() => {
+
     if (onOpen) {
       setOpened(true);
     }
+    
   }, [onOpen]);
 
   const closeModal = () => {
@@ -20,6 +22,8 @@ export const ThemeModal = ({ onOpen, setOpen }) => {
     console.log('theme', theme);
 
     const root = document.documentElement;
+
+    localStorage.setItem('theme', JSON.stringify(theme));
 
     root.style.setProperty('--bg-color', theme['--bg-color']);
     root.style.setProperty('--second-bg-color', theme['--second-bg-color']);
