@@ -48,6 +48,7 @@ export const HomePage = () => {
       setMenuOpen(false);
 
       const scrolled = window.scrollY;
+      
       if (footer) {
         if (Math.ceil(scrolled) >= scrollable) {
           footer.classList.add("show-animate");
