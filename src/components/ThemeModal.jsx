@@ -5,9 +5,11 @@ export const ThemeModal = ({ onOpen, setOpen }) => {
   const [opened, setOpened] = useState(false);
 
   useEffect(() => {
+
     if (onOpen) {
       setOpened(true);
     }
+    
   }, [onOpen]);
 
   const closeModal = () => {
