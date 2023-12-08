@@ -18,7 +18,7 @@ export const Contact = () => {
                 Converse <span>Comigo!</span>
                 <span className="animate scroll" style={{ "--i": 1 }}></span>
             </h2>
-            <form action="#">
+            <form action="">
                 <div className="input-box">
                     <div className="input-field">
                         <input
@@ -47,8 +47,8 @@ export const Contact = () => {
                 <div className="input-box">
                     <div className="input-field">
                         <input 
-                            type="text" 
-                            placeholder="Título" 
+                            type="text"
+                            placeholder="Título"
                             value={infoContact.title}
                             onChange={(e) => setInfoContact({ ...infoContact, title: e.target.value })}
                             required
