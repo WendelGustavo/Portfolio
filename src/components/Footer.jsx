@@ -10,11 +10,11 @@ export const Footer = () => {
             </div>
 
             <div className="footer-iconTop">
-                <a href="#">
+                <a>
                     <i className="bx bx-up-arrow-alt"></i>
                 </a>
 
-                <span className="animate scroll" style={{ "--i": 3 }}></span>
+                <span className="animate scroll" style={{ "--i": 4 }}></span>
             </div>
         </footer>
     );

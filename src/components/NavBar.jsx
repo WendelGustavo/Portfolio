@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const NavBar = ({ modal }) => {
+export const NavBar = ({ modal, componente }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -14,9 +14,14 @@ export const NavBar = ({ modal }) => {
 
   return (
     <>
-    <header className="header">
+    <header className="header"
+    style={{
+      width: componente === 'Home' ? '100%' : '70%',
+    }}
+    >
+    
       <a href="/" className="logo" style={{ textDecoration: "none" }}>
-        Wendel Dev.<span className="animate" style={{ "--i": 1 }}></span>
+        {componente === 'Home' ? 'Wendel Dev.' : 'Pré visualização' } <span className="animate" style={{ "--i": 1 }}></span>
       </a>
 
       <div
@@ -28,6 +33,8 @@ export const NavBar = ({ modal }) => {
       </div>
 
       <nav className={menuOpen ? "navbar active" : "navbar"}>
+      {componente === 'Home' ? (
+        <>
         <a href="#home" className="active">
           Home
         </a>
@@ -38,7 +45,13 @@ export const NavBar = ({ modal }) => {
         <a className="theme" onClick={() => { modal(!modalOpen); funcModalState()}}>
           ⠀⠀⠀
         </a>
-
+        </>
+      )
+        : (
+          <a href="/" className="active">
+            Voltar
+          </a>
+    )}
         <span className="active-nav"></span>
         <span className="animate" style={{ "--i": 2 }}></span>
       </nav>

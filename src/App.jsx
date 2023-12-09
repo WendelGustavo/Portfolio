@@ -1,11 +1,11 @@
-import "./styles/style.css";
-import { HomePage } from "./components/HomePage";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import themes from "./util/DataThemes";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HomePage } from "./components/HomePage";
+import "./styles/style.css";
+import { CreatePersonTheme } from "./components/CreatePersonTheme";
 
 function App() {
-
-
   useEffect(() => {
     const root = document.documentElement;
     const theme = localStorage.getItem('theme');
@@ -24,9 +24,12 @@ function App() {
   }, []);
 
   return (
-    <>
-      <HomePage />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" exact element={<HomePage />} />
+        <Route path="/create-theme" exact element={<CreatePersonTheme />} />
+      </Routes>
+    </Router>
   );
 }
 

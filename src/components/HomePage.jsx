@@ -9,9 +9,32 @@ import { Footer } from "./Footer";
 import { Projects } from './Projects';
 import { ThemeModal } from './ThemeModal';
 
-export const HomePage = () => {
-    const [menuOpen, setMenuOpen] = useState(false);  
-    const [stateModal, setStateModal] = useState(false);
+export const HomePage = ({navbar, cores}) => {
+
+  const [menuOpen, setMenuOpen] = useState(false);  
+  const [stateModal, setStateModal] = useState(false);
+
+  if (cores !== undefined) {
+    const root = document.documentElement;
+
+    if (cores["--bg-color"] !== undefined) {
+    root.style.setProperty("--bg-color", cores["--bg-color"]);
+    }
+
+    if (cores["--second-bg-color"] !== undefined) {
+    root.style.setProperty("--second-bg-color", cores["--second-bg-color"]);
+    }
+
+    if (cores["--text-color"] !== undefined) {
+    root.style.setProperty("--text-color", cores["--text-color"]);
+    }
+
+    if (cores["--main-color"] !== undefined) {
+    root.style.setProperty("--main-color", cores["--main-color"]);
+    }
+  }
+
+
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -24,22 +47,28 @@ export const HomePage = () => {
     const handleScroll = () => {
       const top = window.scrollY;
 
-      sections.forEach((sec) => {
-        const offset = sec.offsetTop - 450;
-        const id = sec.getAttribute("id");
 
-        if (top >= offset) {
-          navLinks.forEach((link) => {
-            link.classList.remove("active");
-            document
-              .querySelector(`header nav a[href*=${id}]`)
-              .classList.add("active");
-          });
-          sec.classList.add("show-animate");
-        } else {
-          sec.classList.remove("show-animate");
-        }
-      });
+      if (sections && navLinks) {
+        sections.forEach((sec) => {
+          const offset = sec.offsetTop - 450;
+          const id = sec.getAttribute("id");
+      
+          if (top >= offset) {
+            navLinks.forEach((link) => {
+              if (link && document.querySelector(`header nav a[href*=${id}]`)) {
+                link.classList.remove("active");
+                document
+                  .querySelector(`header nav a[href*=${id}]`)
+                  .classList.add("active");
+              }
+            });
+      
+            sec.classList.add("show-animate");
+          } else {
+            sec.classList.remove("show-animate");
+          }
+        });
+      }
 
       if (header) {
         header.classList.toggle("sticky", top > 100);
@@ -70,7 +99,7 @@ export const HomePage = () => {
     
     <>
     <div className='background'>
-        <NavBar modal={setStateModal}  />
+       <NavBar modal={setStateModal} componente={navbar !== false ? 'Home' : 'previa'} />
         <Home />
         <Education />
         <Projects />

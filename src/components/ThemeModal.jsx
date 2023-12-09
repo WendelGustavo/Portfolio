@@ -50,6 +50,9 @@ export const ThemeModal = ({ onOpen, setOpen }) => {
       key={index}
       onClick={() => TradeColorFunc(theme)}
       className="theme-modal-item"
+      style={{
+        border: "1px solid black",
+      }}
     >
       <div
         style={{
@@ -60,8 +63,8 @@ export const ThemeModal = ({ onOpen, setOpen }) => {
       >
         <div
           style={{
-            width: "40px",
-            height: "40px",
+            width: "10px",
+            height: "10px",
             border: ".3px solid black",
             backgroundColor: theme["--bg-color"],
             borderRadius: "50%",
@@ -72,8 +75,8 @@ export const ThemeModal = ({ onOpen, setOpen }) => {
         ></div>
         <div
           style={{
-            width: "40px",
-            height: "40px",
+            width: "10px",
+            height: "10px",
             border: ".3px solid black",
             backgroundColor: theme["--second-bg-color"],
             borderRadius: "50%",
@@ -84,8 +87,8 @@ export const ThemeModal = ({ onOpen, setOpen }) => {
         ></div>
         <div
           style={{
-            width: "40px",
-            height: "40px",
+            width: "10px",
+            height: "10px",
             border: ".3px solid black",
             backgroundColor: theme["--text-color"],
             borderRadius: "50%",
@@ -96,8 +99,8 @@ export const ThemeModal = ({ onOpen, setOpen }) => {
         ></div>
         <div
           style={{
-            width: "40px",
-            height: "40px",
+            width: "10px",
+            height: "10px",
             border: ".3px solid black",
             backgroundColor: theme["--main-color"],
             borderRadius: "50%",
@@ -149,11 +152,34 @@ export const ThemeModal = ({ onOpen, setOpen }) => {
             {themes.map((theme, index) => (
               <Item theme={theme} key={index} />
             ))}
-            {themeUser &&
+
+              <div style={{
+                marginTop: '10px'
+              }}
+              ><h2>Seus temas</h2> </div>
+
+            {themeUser && 
               Array.isArray(themeUser) &&
               themeUser.map((theme, index) => (
                 <Item theme={theme} key={index} />
               ))}
+          </div>
+          <div
+            className="btn-box"
+            style={{
+              marginTop: "20px",
+              alignItems: "center",
+              display: "flex",
+              justifyContent: "center",
+              width: "100%",
+              cursor: "pointer",
+            }}
+          >
+        <a className="btn"
+        onClick={()=> window.location.href = '/create-theme'}
+        >
+          Criar tema <i class='bx bxs-palette'></i>
+        </a>
           </div>
         </div>
       </div>
