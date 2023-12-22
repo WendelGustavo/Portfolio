@@ -16,6 +16,26 @@ export const CreatePersonTheme = () => {
     "--main-color": colorSecond,
   });
   const [actualColor, setActualColor] = useState('bg-color');
+  const [altura , setAltura] = useState(0);
+  const [largura, setLargura] = useState(0);
+
+  function handleResize() {
+    const Newlargura = window.innerWidth;
+    const Newaltura = window.innerHeight;
+    if (Newaltura !== altura) {
+      setAltura(Newaltura);
+    }
+    if (Newlargura !== largura) {
+      setLargura(Newlargura);
+    }
+    console.log(`Largura: ${Newlargura}, Altura: ${Newaltura}`);
+  }
+  
+  // Adiciona um ouvinte de evento de redimensionamento
+  window.addEventListener('resize', handleResize);
+  
+  // Execute handleResize uma vez para obter o valor inicial
+  handleResize();
 
 
   AllColors["--bg-color"] = colorBackground;
@@ -70,7 +90,7 @@ export const CreatePersonTheme = () => {
       style={{
         width: "12rem",
         height: "12rem",
-        border: ".3px solid black",
+        border: ".3px solid white",
         backgroundColor: theme["variavel"] === "bg-color" ? colorBackground : theme["variavel"] === "second-bg-color" ? colorSecond : theme["variavel"] === "text-color" ? colorText : colorMain,
         borderRadius: "50%",
         marginRight: "-10px",
@@ -119,8 +139,6 @@ export const CreatePersonTheme = () => {
       className="theme-modal-item"
       style={{
         position: "fixed",
-        top: "0rem",
-        right: "2rem",
       }}
       >
       <div
@@ -152,9 +170,10 @@ export const CreatePersonTheme = () => {
         }}>
         <ColorPicker value={actualColor === 'bg-color' ? colorBackground : actualColor === 'second-bg-color' ? colorSecond : actualColor === 'text-color' ? colorText : colorMain} 
         onChange={actualColor === 'bg-color' ? setColorBackground : actualColor === 'second-bg-color' ? setColorSecond : actualColor === 'text-color' ? setColorText : setColorMain} 
-        height={200}
+        height={altura !== 0 && altura < 670? 100 : 200}
         hideColorTypeBtns
         hideInputs
+        hidePresets={altura !== 0 ? altura < 670 : false}
         />
         </div>
         <div
@@ -172,7 +191,7 @@ export const CreatePersonTheme = () => {
         <a className="btn"
         onClick={()=> saveNewThme(AllColors)}
         >
-          Salvar tema <i class='bx bxs-save'></i>
+          Salvar tema
         </a>
           </div>
 
