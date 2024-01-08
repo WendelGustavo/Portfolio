@@ -104,6 +104,18 @@ body {
     color: var(--main-color);
 }
 
+.custom-select {
+    position: relative;
+    display: inline-block;
+  }
+  .custom-select select {
+    display: none; /* oculta o menu suspenso padrão */
+  }
+  .custom-select img {
+    vertical-align: middle; /* alinha verticalmente a imagem e o texto */
+    margin-right: 10px;
+  }
+
 .theme {
     background-image: linear-gradient(var(--bg-color), var(--main-color), var(--text-color) );
     background-repeat: no-repeat;
@@ -154,7 +166,7 @@ section {
 
 .home-content .text-animate {
     position: relative;
-    width: 32.8rem;
+    width: 40rem;
 }
 
 .home-content .text-animate h3 {
@@ -170,7 +182,7 @@ section {
 
 .home.show-animate .home-content .text-animate h3 {
     animation: homeBgText 6s linear infinite;
-    animation-delay: 2s;
+    animation-delay: 3s;
 }
 
 .home-content .text-animate h3::before {
@@ -186,7 +198,7 @@ section {
 
 .home.show-animate .home-content .text-animate h3::before {
     animation: homeCursorText 6s linear infinite;
-    animation-delay: 2s;
+    animation-delay: 3s;
 }
 
 .home-content p {
@@ -921,7 +933,7 @@ section:nth-child(odd) .animate.scroll,
     0%,
     10%,
     100% {
-        background-position: -33rem 0;
+        background-position: -40rem 0;
     }
 
     65%,

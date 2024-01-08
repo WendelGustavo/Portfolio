@@ -1,8 +1,15 @@
 import React, { useState } from "react";
+import language from "../util/language";
 
 export const NavBar = ({ modal, componente }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState('br'); 
+
+  const handleChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -11,6 +18,20 @@ export const NavBar = ({ modal, componente }) => {
   const funcModalState = () => {
     setModalOpen(!modalOpen);
   };
+
+  const tradeStateSelectedOption = () => {
+
+    const stateSelect = document.querySelector('.custom-select select');
+
+    if (getComputedStyle(stateSelect).display === 'none') {
+      stateSelect.style.display = 'block';
+    } else {
+      stateSelect.style.display = 'none';
+    }
+
+  }
+
+
 
   return (
     <>
@@ -21,7 +42,7 @@ export const NavBar = ({ modal, componente }) => {
     >
     
       <a href="/" className="logo" style={{ textDecoration: "none" }}>
-        {componente === 'Home' ? 'Wendel Dev.' : 'Pré visualização' } <span className="animate" style={{ "--i": 1 }}></span>
+        Wendel Dev. <span className="animate" style={{ "--i": 1 }}></span>
       </a>
 
       <div
@@ -36,12 +57,38 @@ export const NavBar = ({ modal, componente }) => {
       {componente === 'Home' ? (
         <>
         <a href="#home" className="active">
-          Home
+          {language.NavBar.HomeText}
         </a>
-        <a href="#education">Formação</a>
-        <a href="#projects">Projetos</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contato</a>
+        <a href="#education">
+          {language.NavBar.formationText}
+        </a>
+        <a href="#projects">
+          {language.NavBar.ProjectsText}
+        </a>
+        <a href="#skills">
+          {language.NavBar.SkillsText}
+        </a>
+        <a href="#contact">
+          {language.NavBar.ContactText}
+        </a>
+        <a>
+        <div className="custom-select">
+  <span>
+    <img src="http://www.baixamais.net/resources/icones-png/bandeiras-de-paises/Brazil.png" alt="Bandeira do Brasil" 
+    style={{width: 40, height: 40}}
+    onClick={()=> tradeStateSelectedOption()}
+     />
+  </span>
+  <div className="custom-select">
+      <select value={selectedOption} onChange={handleChange}>
+        <option value="br">Portugues</option>
+        <option value="en">English</option> 
+        <option value="es">Spanish</option>
+      </select>
+    </div>
+</div>
+        </a>
+        
         <a className="theme" onClick={() => { modal(!modalOpen); funcModalState()}}>
           ⠀⠀⠀
         </a>

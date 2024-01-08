@@ -160,8 +160,9 @@ export const ThemeModal = ({ onOpen, setOpen }) => {
               themeUser.map((theme, index) => (
                 <Item theme={theme} key={index} />
               ))}
-          </div>
-          <div
+            </div>
+            {/** 
+            <div
             className="btn-box"
             style={{
               marginTop: "20px",
@@ -179,6 +180,7 @@ export const ThemeModal = ({ onOpen, setOpen }) => {
               Criar tema  
             </a>
           </div>
+          */}
         </div>
       </div>
     )

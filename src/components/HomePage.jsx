@@ -108,7 +108,6 @@ export const HomePage = ({navbar, cores}) => {
         <Contact />
         <Footer />
     </div>
-
     <ThemeModal onOpen={stateModal} setOpen={setStateModal} />
     </>
   )

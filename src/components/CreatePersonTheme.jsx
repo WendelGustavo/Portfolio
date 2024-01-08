@@ -123,14 +123,14 @@ export const CreatePersonTheme = () => {
     >
       <div
         style={{
-          flex: 7,
+          width: "100%",
         }}
       >
         <HomePage navbar={false} cores={AllColors}  />
       </div>
       <div
         style={{
-          flex: 3,
+          flex: "30%",  
           alignItems: "center",
           justifyContent: "center",
         }}
