@@ -42,7 +42,8 @@ export const NavBar = ({ modal, componente }) => {
     >
     
       <a href="/" className="logo" style={{ textDecoration: "none" }}>
-        Wendel Dev. <span className="animate" style={{ "--i": 1 }}></span>
+            WendelDev.
+        <span className="animate" style={{ "--i": 1 }}></span>
       </a>
 
       <div
@@ -71,7 +72,7 @@ export const NavBar = ({ modal, componente }) => {
         <a href="#contact">
           {language.NavBar.ContactText}
         </a>
-        <a>
+        <a style={{ borderBottom: 'none' }}>
         <div className="custom-select">
   <span>
     <img src="http://www.baixamais.net/resources/icones-png/bandeiras-de-paises/Brazil.png" alt="Bandeira do Brasil" 
@@ -79,13 +80,6 @@ export const NavBar = ({ modal, componente }) => {
     onClick={()=> tradeStateSelectedOption()}
      />
   </span>
-  <div className="custom-select">
-      <select value={selectedOption} onChange={handleChange}>
-        <option value="br">Portugues</option>
-        <option value="en">English</option> 
-        <option value="es">Spanish</option>
-      </select>
-    </div>
 </div>
         </a>
         

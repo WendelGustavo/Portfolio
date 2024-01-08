@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import language from "../util/language";
 
 export const Contact = () => {
     const [infoContact, setInfoContact] = useState({
@@ -15,7 +16,7 @@ export const Contact = () => {
     return (
         <section className="contact" id="contact">
             <h2 className="heading">
-                Converse <span>Comigo!</span>
+                {language.Contact.sectionTitle} <span>{language.Contact.sectionTitle2}</span>
                 <span className="animate scroll" style={{ "--i": 1 }}></span>
             </h2>
             <form action="">
@@ -23,7 +24,7 @@ export const Contact = () => {
                     <div className="input-field">
                         <input
                            type="text"
-                           placeholder="Nome"
+                           placeholder={language.Contact.placHolders.name}
                            value={infoContact.name}
                            onChange={(e) => setInfoContact({ ...infoContact, name: e.target.value })}
                            required 
@@ -33,7 +34,7 @@ export const Contact = () => {
                     <div className="input-field">
                         <input 
                             type="email" 
-                            placeholder="Email" 
+                            placeholder={language.Contact.placHolders.email}
                             value={infoContact.email}
                             onChange={(e) => setInfoContact({ ...infoContact, email: e.target.value })}
                             required
@@ -48,7 +49,7 @@ export const Contact = () => {
                     <div className="input-field">
                         <input 
                             type="text"
-                            placeholder="Título"
+                            placeholder={language.Contact.placHolders.title}
                             value={infoContact.title}
                             onChange={(e) => setInfoContact({ ...infoContact, title: e.target.value })}
                             required
@@ -67,7 +68,7 @@ export const Contact = () => {
                         rows="10"
                         value={infoContact.message}
                         onChange={(e) => setInfoContact({ ...infoContact, message: e.target.value })}
-                        placeholder="Sua Mensagem"
+                        placeholder={language.Contact.placHolders.message}
                         required
                     ></textarea>
                     <span className="focus"></span>
@@ -81,7 +82,7 @@ export const Contact = () => {
                      className="btn"
                      onClick={() => {handleEmail()}}
                      >
-                        Enviar
+                        {language.Contact.buttonSend}
                     </button>
 
                     <span className="animate scroll" style={{ "--i": 9 }}></span>
