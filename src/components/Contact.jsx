@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import language from "../util/language";
+import { getLanguage } from '../util/language';
 
+const language = getLanguage();
 export const Contact = () => {
     const [infoContact, setInfoContact] = useState({
         name: "",

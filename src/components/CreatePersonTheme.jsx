@@ -94,7 +94,7 @@ export const CreatePersonTheme = () => {
         backgroundColor: theme["variavel"] === "bg-color" ? colorBackground : theme["variavel"] === "second-bg-color" ? colorSecond : theme["variavel"] === "text-color" ? colorText : colorMain,
         borderRadius: "50%",
         marginRight: "-10px",
-        zIndex: 991,
+        zIndex: 2,
         position: "relative",
       }}
       onClick={() => setActualColor(theme["variavel"])}
@@ -167,6 +167,7 @@ export const CreatePersonTheme = () => {
           backgroundColor: "#fff",
           position: "fixed",
           top: "22rem",
+          zIndex: 1,
         }}>
         <ColorPicker value={actualColor === 'bg-color' ? colorBackground : actualColor === 'second-bg-color' ? colorSecond : actualColor === 'text-color' ? colorText : colorMain} 
         onChange={actualColor === 'bg-color' ? setColorBackground : actualColor === 'second-bg-color' ? setColorSecond : actualColor === 'text-color' ? setColorText : setColorMain} 

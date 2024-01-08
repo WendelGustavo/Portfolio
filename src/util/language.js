@@ -65,10 +65,6 @@ const language = {
             },
             buttonSend : 'Enviar',
         },
-
-
-
-        
     },
     en: {
         title: 'English',
@@ -135,10 +131,74 @@ const language = {
             buttonSend : 'Send',
         },
     },
+    es: {
+        title: 'Español',
+        Home : {
+            introdctionText : 'Hola, soy',
+            nameText : 'Wendel Gustavo',
+            jobText : 'Desarrollador Full Stack',
+            TextAbout : `Soy un Desarrollador Full Stack con 1 año de experiencia.
+            Estoy estudiando Ciencias de la Computación en Faculdade Feevale 2º Semestre.
+            Centrado en hacer evolucionar mis conocimientos siempre apuntando a mi crecimiento profesional.`,
+            TextButton : 'Currículo',
+            TextButton2 : 'Proyectos',
+        },
+        NavBar : {
+            HomeText : 'Home',
+            formationText : 'Formación',
+            ProjectsText : 'Proyectos',
+            SkillsText : 'Habilidades',
+            ContactText : 'Contacto',
+        },
+        Education : {
+            sectionTitle : 'Mi ',
+            sectionTitle2 : 'Jornada',
+            title : 'Formación',
+            formationArray : [
+                {
+                    title : 'Ciencias de la Computación - Licenciatura (FEEVALE)',
+                    date : '2023 - ACTUALMENTE (ESTUDIANDO)',
+                    description : 'Estudiando el 2º Semestre de Ciencias de la Computación en Faculdade Feevale.',
+                },
+                {
+                    title : 'Escuela Secundaria Técnica - Informática (CIMOL)',
+                    date : '2020 - 2023',
+                    description : 'Escuela Secundaria Técnica en el curso de Informática, junto con una pasantía de 400 horas, una experiencia que agregó un valor significativo a mi formación académica y profesional.',
+                },
+            ],
+            titleJobs : 'Experiencia',
+            jobsArray : [
+                {
+                    title : 'Desarrollador Full Stack - Kabupi ( FREELANCE )',
+                    date : ' Ago de 2023 - ACTUALMENTE',
+                    description : 'Desarrollo de un sistema de Voucher, descuentos y cashbacks, dirigido al turismo de la Serra Gaúcha.',
+                },
+                {
+                    title : 'Desarrollador Full Stack - CONSEPRO',
+                    date : ' Ene de 2021 - ACTUALMENTE',
+                    description : 'Desarrollo de un sistema de gestión de estacionamiento para la ciudad de Taquara.',
+                },
+            ],
+        },
+        Skills: {
+            sectionTitle : 'Mis ',
+            sectionTitle2 : 'Habilidades',
+        },
+        Contact : {
+            sectionTitle : '¡Ponte en',
+            sectionTitle2 : 'Contacto!',
+            placHolders : {
+                name : 'Nombre',
+                email : 'Su Email',
+                title : 'Título',
+                message : 'Su Mensaje',
+            },
+            buttonSend : 'Enviar',
+        },
+    }
 };
 
-if (localStorage.getItem('language') === null) {
-    localStorage.setItem('language', 'pt');
-}
-
-export default language[localStorage.getItem('language') || language['pt']];
+export const getLanguage = () => {
+    const storedLanguage = localStorage.getItem('language') || 'pt'; // Padrão para 'pt' se não houver valor no localStorage
+    return language[storedLanguage] || language['pt']; // Retorna o idioma correspondente ou 'pt' por padrão
+};
