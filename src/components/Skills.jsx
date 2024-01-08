@@ -1,4 +1,5 @@
 import React from "react";
+import language from "../util/language";
 
 export const Skills = () => {
   const skills = [
@@ -52,7 +53,7 @@ export const Skills = () => {
   return (
     <section className="skills" id="skills">
       <h2 className="heading">
-        Minhas <span>Habilidades</span>
+        {language.Skills.sectionTitle} <span>{language.Skills.sectionTitle2}</span>
         <span className="animate scroll" style={{ "--i": 1 }}></span>
       </h2>
 

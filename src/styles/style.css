@@ -57,6 +57,8 @@ body {
 
 .background {
     background: var(--bg-color);
+    width: 100%;
+    height: 100%;
 }
 
 .header {
@@ -73,6 +75,7 @@ body {
     transition: .3s;
 }
 
+
 .header.sticky {
     background: var(--bg-color);
 }
@@ -82,8 +85,21 @@ body {
     font-size: 2.8rem;
     color: var(--text-color);
     font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
 }
 
+
+.logo .animate {
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .logo:hover .animate {
+    color: var(--main-color);
+    transform: translateY(-10px); /* Elevação da letra ao passar o mouse */
+  }
+  
 .navbar {
     position: relative;
 }
@@ -99,7 +115,20 @@ body {
 .navbar a:hover,
 .navbar a.active {
     color: var(--main-color);
+    border-bottom: .2rem solid var(--main-color);   
 }
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+  }
+  .custom-select select {
+    display: none; /* oculta o menu suspenso padrão */
+  }
+  .custom-select img {
+    vertical-align: middle; /* alinha verticalmente a imagem e o texto */
+    margin-right: 10px;
+  }
 
 .theme {
     background-image: linear-gradient(var(--bg-color), var(--main-color), var(--text-color) );
@@ -133,7 +162,7 @@ section {
 }
 
 .home-content {
-    max-width: 65rem;
+    max-width: 67rem;
     z-index: 99;
 }
 
@@ -151,7 +180,7 @@ section {
 
 .home-content .text-animate {
     position: relative;
-    width: 32.8rem;
+    width: 40rem;
 }
 
 .home-content .text-animate h3 {
@@ -162,12 +191,12 @@ section {
     background-image: linear-gradient(var(--main-color), var(--main-color));
     background-repeat: no-repeat;
     -webkit-background-clip: text;
-    background-position: -33rem 0;
+    background-position: -40rem 0;
 }
 
 .home.show-animate .home-content .text-animate h3 {
     animation: homeBgText 6s linear infinite;
-    animation-delay: 2s;
+    animation-delay: 3s;
 }
 
 .home-content .text-animate h3::before {
@@ -183,7 +212,7 @@ section {
 
 .home.show-animate .home-content .text-animate h3::before {
     animation: homeCursorText 6s linear infinite;
-    animation-delay: 2s;
+    animation-delay: 3s;
 }
 
 .home-content p {
@@ -219,10 +248,6 @@ section {
     transition: .5s;
 }
 
-.btn-box .btn:hover {
-    color: var(--main-color);
-}
-
 .btn-box .btn:nth-child(2) {
     background: transparent;
     color: var(--main-color);
@@ -230,11 +255,12 @@ section {
 
 .btn-box .btn:nth-child(2):hover {
     color: var(--bg-color) !important;
+    
 }
 
 .btn-box .btn:nth-child(2)::before {
     background: var(--main-color);
-    color: var(--bg-color) !important;
+    color:  var(--bg-color);
 }
 
 .btn-box .btn::before {
@@ -245,8 +271,8 @@ section {
     width: 0;
     height: 100%;
     background: var(--bg-color);
-    z-index: 99;
-    transition: .5s;
+    color: var(--main-color);
+    transition: .8s;
 }
 
 .btn-box .btn:hover::before {
@@ -659,6 +685,7 @@ span {
     border-radius: .6rem;
     z-index: 1;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .footer-iconTop a::before {
@@ -749,7 +776,6 @@ section:nth-child(odd) .animate.scroll,
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
-    border: 1px solid black;
   }
 
 
@@ -919,7 +945,7 @@ section:nth-child(odd) .animate.scroll,
     0%,
     10%,
     100% {
-        background-position: -33rem 0;
+        background-position: -40rem 0;
     }
 
     65%,

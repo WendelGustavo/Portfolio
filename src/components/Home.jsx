@@ -1,22 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import language from "../util/language";
 
 export const Home = () => {
   return (
     <section className="home show-animate" id="home">
       <div className="home-content">
         <h1>
-          Olá, sou<span> Wendel Gustavo</span>
+          {language.Home.introdctionText}<span> {language.Home.nameText}</span>
           <span className="animate" style={{ "--i": 2 }}></span>
         </h1>
         <div className="text-animate">
-          <h3>Full Stack Developer</h3>
+          <h3>{language.Home.jobText}</h3>
           <span className="animate" style={{ "--i": 3 }}></span>
         </div>
         <p>
-          Sou um Desenvolvedor Full Stack com 1 ano de experiência.
-          Estou cursando Ciência da Computação na Faculdade Feevale 2º Semestre.
-          Focado em evoluir meus conhecimentos sempre visando o meu crescimento profissional.
+          {language.Home.TextAbout}
           <span className="animate" style={{ "--i": 4 }}></span>
         </p>
 
@@ -27,10 +26,10 @@ export const Home = () => {
           download="Wendel Gustavo - Curriculo.pdf"
           target="_blank" rel="noreferrer"
           >
-            Currículo⠀<i className="bx bx-download"></i>
+            {language.Home.TextButton}⠀<i className="bx bx-download"></i>
           </a>
           <a href="#" className="btn">
-            Projetos
+            {language.Home.TextButton2}
           </a>
           <span className="animate" style={{ "--i": 5 }}></span>
         </div>
