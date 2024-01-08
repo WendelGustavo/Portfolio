@@ -1,15 +1,11 @@
 import React, { useState } from "react";
-import language from "../util/language";
+import { getLanguage } from '../util/language';
+
+const language = getLanguage();
 
 export const NavBar = ({ modal, componente }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState('br'); 
-
-  const handleChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
-
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -19,25 +15,17 @@ export const NavBar = ({ modal, componente }) => {
     setModalOpen(!modalOpen);
   };
 
-  const tradeStateSelectedOption = () => {
-
-    const stateSelect = document.querySelector('.custom-select select');
-
-    if (getComputedStyle(stateSelect).display === 'none') {
-      stateSelect.style.display = 'block';
-    } else {
-      stateSelect.style.display = 'none';
-    }
-
-  }
-
+  const chanceLanguage = (lang) => {
+    localStorage.setItem("language", lang);
+    window.location.reload();
+  };
 
 
   return (
     <>
     <header className="header"
     style={{
-      width: componente === 'Home' ? '100%' : '70%',
+      width: '100%',
     }}
     >
     
@@ -72,12 +60,22 @@ export const NavBar = ({ modal, componente }) => {
         <a href="#contact">
           {language.NavBar.ContactText}
         </a>
-        <a style={{ borderBottom: 'none' }}>
+        <a 
+          style={{ borderBottom: 'none' }}
+        >
         <div className="custom-select">
   <span>
-    <img src="http://www.baixamais.net/resources/icones-png/bandeiras-de-paises/Brazil.png" alt="Bandeira do Brasil" 
-    style={{width: 40, height: 40}}
-    onClick={()=> tradeStateSelectedOption()}
+      <img src="http://www.baixamais.net/resources/icones-png/bandeiras-de-paises/Brazil.png" alt="Bandeira do Brasil" 
+        style={{width: 40, height: 40}}
+        onClick={() => chanceLanguage('pt')}
+      />
+      <img src="https://www.baixamais.net/resources/icones-png/bandeiras-de-paises/United%20Kingdom(Great%20Britain).png" alt="Bandeira do Reino Unido" 
+        style={{width: 40, height: 40}}
+        onClick={() => chanceLanguage('en')}
+      />
+      <img src="https://www.baixamais.net/resources/icones-png/bandeiras-de-paises/Spain.png" alt="Bandeira da Espanha"
+        style={{width: 40, height: 40}}
+        onClick={() => chanceLanguage('es')}
      />
   </span>
 </div>

@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import language from "../util/language";
+import { getLanguage } from '../util/language';
+
+const language = getLanguage();
 
 export const Home = () => {
   return (

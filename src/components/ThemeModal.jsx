@@ -177,7 +177,7 @@ export const ThemeModal = ({ onOpen, setOpen }) => {
               className="btn"
               onClick={() => (window.location.href = "/create-theme")}
             >
-              Criar tema  
+              Criar tema 
             </a>
           </div>
           */}

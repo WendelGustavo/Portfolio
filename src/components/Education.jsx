@@ -1,6 +1,7 @@
 import React from "react";
-import language from "../util/language";
+import { getLanguage } from '../util/language';
 
+const language = getLanguage();
 export const Education = () => {
     return (
         <section className="education" id="education">
