@@ -100,12 +100,17 @@ export const HomePage = ({navbar, cores}) => {
     <>
     <div className='background'>
        <NavBar modal={setStateModal} componente={navbar !== false ? 'Home' : 'previa'} />
+       <div></div>
         <Home />
+        <div></div>
         <Education />
+        <div></div>
         <Projects />
+        <div></div>
         <Skills />
-        <Projects />
+        <div></div>
         <Contact />
+        <div></div>
         <Footer />
     </div>
     <ThemeModal onOpen={stateModal} setOpen={setStateModal} />

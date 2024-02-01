@@ -6,7 +6,7 @@ const language = getLanguage();
 export const Skills = () => {
   const skills = [
     {
-      name: "JavaScript",
+      name: "Java Script",
       icon: "bx bxl-javascript",
       URL: "https://www.javascript.com/",
     },
@@ -21,7 +21,7 @@ export const Skills = () => {
       URL: "https://nodejs.org/en/",
     },
     {
-      name: "TypeScript",
+      name: "Type Script",
       icon: "bx bxl-typescript",
       URL: "https://www.typescriptlang.org/",
     },
@@ -31,12 +31,17 @@ export const Skills = () => {
       URL: "https://git-scm.com/",
     },
     {
-      name: "MySql",
+      name: "React Native",
+      icon: "bx bxl-react",
+      URL: "https://reactnative.dev/",
+    },
+    {
+      name: "SQL",
       icon: "bx bxs-data",
       URL: "https://www.mysql.com/",
     },
     {
-      name: "PostgreSQL",
+      name: "Postgre SQL",
       icon: "bx bxl-postgresql",
       URL: "https://www.postgresql.org/",
     },
@@ -49,7 +54,17 @@ export const Skills = () => {
       name: "Java",
       icon: "bx bxl-java",
       URL: "https://www.java.com/pt-BR/",
-    }
+    },
+    {
+      name: "HTML",
+      icon: "bx bxl-html5",
+      URL: "https://developer.mozilla.org/pt-BR/docs/Web/HTML",
+    },
+    {
+      name: "CSS",
+      icon: "bx bxl-css3",
+      URL: "https://developer.mozilla.org/pt-BR/docs/Web/CSS",
+    },
   ];
 
   return (
@@ -65,8 +80,8 @@ export const Skills = () => {
             {skills.map((skill, index) => (
               <div className="skills-content" key={index}>
                 <div className="cursor-pointer" onClick={()=> window.open(skill.URL, '_blank')}>
-                <i className={`${skill.icon} bx-md`}></i>
-                <h1 style={{marginLeft : '2px'}}>{skill.name}</h1>
+                <i className={`${skill.icon} bx-lg`}></i>
+                <h1>{skill.name}</h1>
                 </div>      
               </div>
             ))}

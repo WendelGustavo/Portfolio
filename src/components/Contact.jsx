@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { getLanguage } from '../util/language';
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2'
 
 const language = getLanguage();
 export const Contact = () => {
@@ -11,7 +13,41 @@ export const Contact = () => {
     });
 
     const handleEmail = () => {
-        console.log(infoContact);
+        if (infoContact.name === "" || infoContact.email === "" || infoContact.title === "" || infoContact.message === "") {
+            Swal.fire({
+                title: 'Opss!',
+                text: 'Preencha todos os campos para enviar o email!',
+                icon: 'error',
+              })
+            return;
+        }
+
+        const templateParams = {
+            from_name: infoContact.name,
+            email: infoContact.email,
+            title: infoContact.title,
+            message: infoContact.message,
+        };
+
+        emailjs.send("service_4ae9q69", "template_w1lxwva", templateParams, "LkCaMFKB4umYbkrfZ").then((response) => {
+            Swal.fire({
+                title: 'Sucesso!',
+                text: 'Email enviado com sucesso!',
+                icon: 'success',
+              })
+            setInfoContact({
+                name: "",
+                email: "",
+                title: "",
+                message: "",
+            });
+        }, (err) => {
+            Swal.fire({
+                title: 'Opss!',
+                text: 'Ocorreu um erro ao enviar o email, tente novamente mais tarde!',
+                icon: 'error',
+              })
+        });
     };
 
     return (

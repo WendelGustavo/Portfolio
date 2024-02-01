@@ -30,7 +30,7 @@ export const Home = () => {
           >
             {language.Home.TextButton}⠀<i className="bx bx-download"></i>
           </a>
-          <a href="#" className="btn">
+          <a href="#projects" className="btn">
             {language.Home.TextButton2}
           </a>
           <span className="animate" style={{ "--i": 5 }}></span>
@@ -61,7 +61,7 @@ export const Home = () => {
         </a>
         <a
           href="https://github.com/WendelGustavo"
-          target="_blank"
+          target="_blank" 
           rel="noreferrer"
         >
           <i className="bx bxl-github"></i>
@@ -74,3 +74,4 @@ export const Home = () => {
     </section>
   );
 };
+

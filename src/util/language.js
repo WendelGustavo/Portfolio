@@ -65,6 +65,10 @@ const language = {
             },
             buttonSend : 'Enviar',
         },
+        Projects: {
+            sectionTitle : 'Meus ',
+            sectionTitle2 : 'Projetos',
+        },
     },
     en: {
         title: 'English',
@@ -130,6 +134,11 @@ const language = {
             },
             buttonSend : 'Send',
         },
+        Projects: {
+            sectionTitle : 'My ',
+            sectionTitle2 : 'Projects',
+        },
+
     },
     es: {
         title: 'Español',
@@ -194,6 +203,10 @@ const language = {
                 message : 'Su Mensaje',
             },
             buttonSend : 'Enviar',
+        },
+        Projects: {
+            sectionTitle : 'Mis ',
+            sectionTitle2 : 'Proyectos',
         },
     }
 };

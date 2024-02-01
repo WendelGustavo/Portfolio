@@ -16,6 +16,12 @@ export const NavBar = ({ modal, componente }) => {
   };
 
   const chanceLanguage = (lang) => {
+    const ActualLang = localStorage.getItem("language");
+
+    if (ActualLang === lang) {
+      return;
+    }
+    
     localStorage.setItem("language", lang);
     window.location.reload();
   };
@@ -30,7 +36,7 @@ export const NavBar = ({ modal, componente }) => {
     >
     
       <a href="/" className="logo" style={{ textDecoration: "none" }}>
-            WendelDev.
+           {'<'} WendelDev {'/>'}
         <span className="animate" style={{ "--i": 1 }}></span>
       </a>
 
