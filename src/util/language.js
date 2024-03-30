@@ -7,7 +7,7 @@ const language = {
             introdctionText : 'Olá, sou',
             nameText : 'Wendel Gustavo',
             jobText : 'Desenvolvedor Full Stack',
-            TextAbout : `Sou um Desenvolvedor Full Stack com 1 ano de experiência.
+            TextAbout : `Sou um Desenvolvedor Full Stack com mais de 1 ano de experiência.
             Estou cursando Ciência da Computação na Faculdade Feevale 2º Semestre.
             Focado em evoluir meus conhecimentos sempre visando o meu crescimento profissional.`,
             TextButton : 'Currículo',
@@ -73,10 +73,10 @@ const language = {
     en: {
         title: 'English',
         Home : {
-            introdctionText : 'Hello, I am',
+            introdctionText : 'Hi, i am',
             nameText : 'Wendel Gustavo',
             jobText : 'Full Stack Developer',
-            TextAbout : `I am a Full Stack Developer with 1 year of experience.
+            TextAbout : `I am a Full Stack Developer with over 1 year of experience.
             I am studying Computer Science at Faculdade Feevale 2nd Semester.
             Focused on evolving my knowledge always aiming at my professional growth.`,
             TextButton : 'Resume',
@@ -144,9 +144,9 @@ const language = {
         title: 'Español',
         Home : {
             introdctionText : 'Hola, soy',
-            nameText : 'Wendel Gustavo',
+            nameText : 'Wendel Gustavo ',
             jobText : 'Desarrollador Full Stack',
-            TextAbout : `Soy un Desarrollador Full Stack con 1 año de experiencia.
+            TextAbout : `Soy un Desarrollador Full Stack con más de 1 año de experiencia.
             Estoy estudiando Ciencias de la Computación en Faculdade Feevale 2º Semestre.
             Centrado en hacer evolucionar mis conocimientos siempre apuntando a mi crecimiento profesional.`,
             TextButton : 'Currículo',

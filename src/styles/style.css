@@ -52,6 +52,7 @@ html {
 }
 
 body {
+    text-align: justify;
     color: var(--text-color);
 }
 
@@ -162,7 +163,7 @@ section {
 }
 
 .home-content {
-    max-width: 67rem;
+    max-width: 69rem;
     z-index: 99;
 }
 
@@ -550,6 +551,7 @@ span {
     padding: 1rem 2rem;
     margin: .5rem;
     z-index: 1;
+    height: 10rem;
     overflow: hidden;
 }
 
