@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getLanguage } from '../util/language';
+import { getLanguage } from "../util/language";
 
 const language = getLanguage();
 
@@ -21,86 +21,92 @@ export const NavBar = ({ modal, componente }) => {
     if (ActualLang === lang) {
       return;
     }
-    
+
     localStorage.setItem("language", lang);
     window.location.reload();
   };
 
-
   return (
     <>
-    <header className="header"
-    style={{
-      width: '100%',
-    }}
-    >
-    
-      <a href="/" className="logo" style={{ textDecoration: "none" }}>
-           {'<'} WendelDev {'/>'}
-        <span className="animate" style={{ "--i": 1 }}></span>
-      </a>
-
-      <div
-        className={menuOpen ? "bx bx-x" : "bx bx-menu"}
-        id="menu-icon"
-        onClick={() => toggleMenu()}
+      <header
+        className="header"
+        style={{
+          width: "100%",
+        }}
       >
-        <span className="animate" style={{ "--i": 2 }}></span>
-      </div>
+        <a href="/" className="logo" style={{ textDecoration: "none" }}>
+          {"<"} WendelDev {"/>"}
+          <span className="animate" style={{ "--i": 1 }}></span>
+        </a>
 
-      <nav className={menuOpen ? "navbar active" : "navbar"}>
-      {componente === 'Home' ? (
-        <>
-        <a href="#home" className="active">
-          {language.NavBar.HomeText}
-        </a>
-        <a href="#education">
-          {language.NavBar.formationText}
-        </a>
-        <a href="#projects">
-          {language.NavBar.ProjectsText}
-        </a>
-        <a href="#skills">
-          {language.NavBar.SkillsText}
-        </a>
-        <a href="#contact">
-          {language.NavBar.ContactText}
-        </a>
-        <a 
-          style={{ borderBottom: 'none' }}
+        <div
+          className={menuOpen ? "bx bx-x" : "bx bx-menu"}
+          id="menu-icon"
+          onClick={() => toggleMenu()}
         >
-        <div className="custom-select">
-  <span>
-      <img src="http://www.baixamais.net/resources/icones-png/bandeiras-de-paises/Brazil.png" alt="Bandeira do Brasil" 
-        style={{width: 40, height: 40}}
-        onClick={() => chanceLanguage('pt')}
-      />
-      <img src="https://www.baixamais.net/resources/icones-png/bandeiras-de-paises/United%20Kingdom(Great%20Britain).png" alt="Bandeira do Reino Unido" 
-        style={{width: 40, height: 40}}
-        onClick={() => chanceLanguage('en')}
-      />
-      <img src="https://www.baixamais.net/resources/icones-png/bandeiras-de-paises/Spain.png" alt="Bandeira da Espanha"
-        style={{width: 40, height: 40}}
-        onClick={() => chanceLanguage('es')}
-     />
-  </span>
-</div>
-        </a>
-        
-        <a className="theme" onClick={() => { modal(!modalOpen); funcModalState()}}>
-          ⠀⠀⠀
-        </a>
-        </>
-      )
-        : (
-          <a href="/" className="active">
-            Voltar
-          </a>
-    )}
-        <span className="active-nav"></span>
-        <span className="animate" style={{ "--i": 2 }}></span>
-      </nav>
-    </header>
+          <span className="animate" style={{ "--i": 2 }}></span>
+        </div>
+
+        <nav className={menuOpen ? "navbar active" : "navbar"}>
+          {componente === "Home" ? (
+            <>
+              <a href="#home" className="active">
+                {language.NavBar.HomeText}
+              </a>
+              <a href="#education">{language.NavBar.formationText}</a>
+              <a href="#projects">{language.NavBar.ProjectsText}</a>
+              <a href="#skills">{language.NavBar.SkillsText}</a>
+              <a href="#contact">{language.NavBar.ContactText}</a>
+              <a style={{ borderBottom: "none" }}>
+                <div className="custom-select">
+                  <span>
+                    <img
+                      src="https://flagcdn.com/36x27/br.png"
+                      srcset="https://flagcdn.com/72x54/br.png 2x,https://flagcdn.com/108x81/br.png 3x"
+                      width="36"
+                      height="27"
+                      onClick={() => chanceLanguage("pt")}
+                      alt="Português"
+                    />
+                    <img
+                      src="https://flagcdn.com/36x27/es.png"
+                      srcset="https://flagcdn.com/72x54/es.png 2x,https://flagcdn.com/108x81/es.png 3x"
+                      width="36"
+                      height="27"
+                      onClick={() => chanceLanguage("es")}
+                      alt="Espanhol"
+                    />
+                    <img
+                      src="https://flagcdn.com/36x27/us.png"
+                      srcset="https://flagcdn.com/72x54/us.png 2x,https://flagcdn.com/108x81/us.png 3x"
+                      width="36"
+                      height="27"
+                      onClick={() => chanceLanguage("en")}
+                      alt="Inglês"
+                    />
+                  </span>
+                </div>
+              </a>
+
+              <a
+                className="theme"
+                onClick={() => {
+                  modal(!modalOpen);
+                  funcModalState();
+                }}
+              >
+                ⠀⠀⠀
+              </a>
+            </>
+          ) : (
+            <a href="/" className="active">
+              Voltar
+            </a>
+          )}
+          <span className="active-nav"></span>
+          <span className="animate" style={{ "--i": 2 }}></span>
+        </nav>
+      </header>
     </>
   );
 };
